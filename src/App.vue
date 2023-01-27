@@ -1,7 +1,11 @@
 <template>
     <div class="app">
-        <post-form/>
-        <post-list :posts="posts"/>
+        <post-form
+            @create="createPost"
+        />
+        <post-list 
+            :posts="posts"
+        />
     </div>
 </template>
 
@@ -20,20 +24,13 @@ import PostList from "@/components/PostList.vue"
                     {id: 2, title:'JavaScript 2', body: 'Описание поста 2'},
                     {id: 3, title:'JavaScript 3', body: 'Описание поста 3'},
                 ],
-                title: '',
-                body: ''
             }
         },
         methods: {
-            creatPost() {
-                const newPost = {
-                    id: Date.now(),
-                    title: this.title,
-                    body: this.body
-                }
-                this.posts.push(newPost)
-                this.title = ''
-                this.body = ''
+            createPost(post, second, third) {
+                console.log(post);
+                console.log(second);
+                console.log(third);
             },
         }
     }
