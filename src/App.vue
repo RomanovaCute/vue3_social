@@ -25,6 +25,7 @@
 import PostForm from "@/components/PostForm.vue"
 import PostList from "@/components/PostList.vue"
 import MyDialog from './components/UI/MyDialog.vue'
+import axios from 'axios'
 
     export default {
         components : {
