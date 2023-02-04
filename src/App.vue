@@ -5,6 +5,7 @@
         />
         <post-list 
             :posts="posts"
+            @remove="removePost"
         />
     </div>
 </template>
@@ -27,11 +28,12 @@ import PostList from "@/components/PostList.vue"
             }
         },
         methods: {
-            createPost(post, second, third) {
-                console.log(post);
-                console.log(second);
-                console.log(third);
+            createPost(post) {
+                this.posts.push(post)
             },
+            removePost(post) {
+                this.posts = this.posts.filter(p => p.id !== post.id)
+            }
         }
     }
 </script>
